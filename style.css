@@ -18,3 +18,12 @@ footer{background:var(--dark);color:white;padding:58px 0 25px;scroll-margin-top:
 @media(max-width:600px){.hero-tags{gap:7px;margin-top:25px}.hero-tags li{font-size:11px;padding:5px 10px}.career-items dl{column-gap:10px;grid-template-columns:28px minmax(0,1fr);font-size:12px}.career-items article{gap:12px}}
 
 .play-videos{margin-top:16px}.play-videos h4{font-size:12px;color:var(--muted);margin-bottom:8px}.video-links{display:flex;flex-wrap:wrap;gap:8px}.video-links a{display:inline-flex;align-items:center;min-height:44px;padding:9px 13px;border:1px solid var(--line);border-radius:6px;font-size:13px;font-weight:700}.video-links a:hover{color:var(--accent);border-color:var(--accent)}
+
+/* Keep paired PDF buttons aligned; reserve an empty video row where needed. */
+@media(min-width:601px){
+  .project-actions{display:grid;grid-template-rows:auto 80px;row-gap:16px}
+  .project-actions>.play-videos{margin-top:0}
+}
+@media(min-width:601px) and (max-width:800px){
+  .project-actions{grid-template-rows:auto 132px}
+}
