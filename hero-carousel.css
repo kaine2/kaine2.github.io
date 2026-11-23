@@ -8,6 +8,7 @@
 .hero-slide.is-playing>video{opacity:1}
 .hero-slide--document{background:radial-gradient(ellipse at 78% 36%,#33494f 0%,#18262c 62%,#10171c 100%)}
 .hero-slide--document>img{inset:auto -2% auto auto;top:50%;width:76%;height:auto;max-height:95%;object-fit:contain;transform:translateY(-50%);border-radius:8px;box-shadow:0 24px 80px #0007}
+@media(min-width:801px){.hero-slide--document>img{left:50%;right:auto;width:min(1180px,94%);height:95%;max-height:none;object-position:center;transform:translate(-50%,-50%)}.hero-slide--document{background:radial-gradient(ellipse at 50% 40%,#33494f 0%,#18262c 62%,#10171c 100%)}}
 .hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(12,17,21,.97) 0%,rgba(12,17,21,.87) 32%,rgba(12,17,21,.63) 54%,rgba(12,17,21,.21) 80%,rgba(12,17,21,.32) 100%),linear-gradient(0deg,rgba(12,17,21,.92) 0%,transparent 35%,rgba(12,17,21,.14) 100%);pointer-events:none}
 .hero[data-hero-carousel] .hero-grid{position:relative;min-height:340px;padding-bottom:44px}
 .hero[data-hero-carousel] .intro{color:#dde2e4;text-shadow:0 1px 5px #0008}
