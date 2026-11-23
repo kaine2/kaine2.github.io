@@ -1,0 +1,46 @@
+/* Portfolio media backdrop. Keep the introduction in a stable foreground. */
+.hero[data-hero-carousel]{position:relative;isolation:isolate;overflow:hidden;padding-bottom:0;background:#10171c}
+.hero-backdrop{position:absolute;inset:0;z-index:-3;overflow:hidden;pointer-events:none}
+.hero-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .85s ease,visibility .85s;overflow:hidden;background:#13242b}
+.hero-slide.is-active{opacity:1;visibility:visible}
+.hero-slide>img,.hero-slide>video{width:100%;height:100%;object-fit:cover;object-position:65% 50%;position:absolute;inset:0}
+.hero-slide>video{opacity:0;transition:opacity .4s}
+.hero-slide.is-playing>video{opacity:1}
+.hero-slide--document{background:radial-gradient(ellipse at 78% 36%,#33494f 0%,#18262c 62%,#10171c 100%)}
+.hero-slide--document>img{inset:auto -2% auto auto;top:50%;width:76%;height:auto;max-height:95%;object-fit:contain;transform:translateY(-50%);border-radius:8px;box-shadow:0 24px 80px #0007}
+.hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(12,17,21,.97) 0%,rgba(12,17,21,.87) 32%,rgba(12,17,21,.63) 54%,rgba(12,17,21,.21) 80%,rgba(12,17,21,.32) 100%),linear-gradient(0deg,rgba(12,17,21,.92) 0%,transparent 35%,rgba(12,17,21,.14) 100%);pointer-events:none}
+.hero[data-hero-carousel] .hero-grid{position:relative;min-height:340px;padding-bottom:44px}
+.hero[data-hero-carousel] .intro{color:#dde2e4;text-shadow:0 1px 5px #0008}
+.hero[data-hero-carousel] h1{text-shadow:0 2px 20px #0005}
+.hero[data-hero-carousel] .profile{background:rgba(16,23,28,.52);border:1px solid #ffffff25;border-radius:16px;padding:24px;backdrop-filter:blur(10px);justify-self:end;min-width:190px}
+.hero[data-hero-carousel] .profile img{width:108px;height:108px;margin-bottom:18px}
+.hero[data-hero-carousel] .hero-tags li{background:rgba(16,23,28,.5);border-color:#ffffff38;color:#e5e9eb}
+.hero[data-hero-carousel] .ghost{background:rgba(16,23,28,.48);border-color:#ffffff55}
+.hero-controls{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:19px;padding-bottom:22px;border-top:1px solid #ffffff29;min-height:100px}
+.hero-controls[hidden]{display:none}
+.hero-current{min-width:0;display:grid;grid-template-columns:auto auto;align-items:center;column-gap:20px;row-gap:2px}
+.hero-current>span{grid-column:1/-1;color:#c5cfd2;font-size:12px;letter-spacing:.5px}
+.hero-current>strong{font-size:18px;line-height:1.6;letter-spacing:-.03em}
+.hero-current>a{font-size:13px;color:#ffd0bb;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+.hero-navigation{display:flex;gap:10px;align-items:center;flex-shrink:0}
+.hero-controls button{appearance:none;font:inherit;color:#f4f6f7;border:1px solid #ffffff45;background:rgba(16,23,28,.6);cursor:pointer;min-height:44px;transition:background .2s,border-color .2s}
+.hero-controls button:hover{background:#ffffff20;border-color:#ffffff8a}
+.hero-controls button:focus-visible,.hero-controls a:focus-visible{outline:3px solid #ffb18d;outline-offset:4px}
+.hero-arrow{display:grid;place-items:center;width:44px;border-radius:50%;padding:0}
+.hero-arrow svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hero-dots{display:flex;align-items:center;gap:2px;margin:0 4px}
+.hero-controls .hero-dot{border:0;background:transparent;width:30px;min-height:44px;padding:0;display:grid;place-items:center}
+.hero-dot::before{content:"";width:7px;height:7px;background:#ffffff65;border-radius:10px;transition:width .25s,background .25s}
+.hero-dot[aria-current]::before{width:23px;background:var(--bright)}
+.hero-controls .hero-dot:hover{background:transparent}
+.hero-toggle{display:flex;align-items:center;gap:8px;border-radius:22px;padding:0 14px;font-size:13px!important;margin-left:5px}
+.hero-toggle-icon{display:inline-block;width:10px;height:12px;border-left:3px solid currentColor;border-right:3px solid currentColor}
+.hero-toggle.is-paused .hero-toggle-icon{height:0;width:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:9px solid currentColor;border-right:0}
+.hero-timeline{height:2px;position:absolute;bottom:0;left:0;right:0;background:#ffffff14;pointer-events:none}
+.hero-timeline>span{display:block;height:100%;background:var(--bright);transform:scaleX(0);transform-origin:left center}
+@media(min-width:1500px){.hero[data-hero-carousel] .hero-grid{min-height:370px;padding-bottom:56px}}
+@media(max-width:800px){.hero[data-hero-carousel] .profile{min-width:0;padding:20px}.hero[data-hero-carousel] .profile img{width:86px;height:86px}.hero-controls{gap:16px}.hero-current{display:block}.hero-current>span,.hero-current>strong{display:block}.hero-current>a{display:inline-block;margin-top:2px}.hero-navigation{gap:6px}.hero-toggle{padding:0 11px}.hero-dot{width:25px!important}.hero-slide--document>img{width:90%;right:-22%}}
+@media(max-width:600px){.hero[data-hero-carousel]{padding-top:40px}.hero[data-hero-carousel] .hero-grid{min-height:0;padding-bottom:28px}.hero-shade{background:linear-gradient(90deg,rgba(12,17,21,.9),rgba(12,17,21,.63)),linear-gradient(0deg,#10171c,transparent 70%)}.hero-slide>img,.hero-slide>video{object-position:62% 50%}.hero-slide--document>img{width:120%;max-width:none;max-height:none;right:-27%;top:38%}.hero-controls{flex-wrap:wrap;gap:14px;padding-top:16px;padding-bottom:20px}.hero-current{display:grid;grid-template-columns:minmax(0,1fr) auto;width:100%;column-gap:12px}.hero-current>strong{font-size:17px}.hero-current>a{font-size:12px}.hero-current>span{font-size:11px}.hero-navigation{width:100%;justify-content:flex-end;gap:8px}.hero-dots{margin-right:auto;order:-1;gap:5px}.hero-controls .hero-dot{width:28px!important}.hero-toggle{margin-left:3px;font-size:12px!important}.hero[data-hero-carousel] .hero-tags{margin-top:22px}}
+@media(prefers-reduced-motion:reduce){.hero-slide,.hero-slide>video,.hero-dot::before{transition:none}}
+@media(min-width:601px) and (max-width:800px){.hero[data-hero-carousel] .profile{width:140px;padding:20px 12px}.hero[data-hero-carousel] .profile p{white-space:nowrap;font-size:12px}}
+@media print{.hero-backdrop,.hero-shade,.hero-controls,.hero-timeline{display:none!important}.hero[data-hero-carousel]{background:white}.hero[data-hero-carousel] h1{text-shadow:none}.hero[data-hero-carousel] .intro{color:#444;text-shadow:none}}
