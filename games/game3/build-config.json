@@ -1,0 +1,10 @@
+{
+  "loaderUrl": "Build/8747365caf10a95bea9005a20bdf073b.loader.js",
+  "dataUrl": "Build/31ea4973d255aadc6b7282cc85daee11.data.unityweb",
+  "frameworkUrl": "Build/4fbec1d908e597836b29195a4af99ede.framework.js.unityweb",
+  "codeUrl": "Build/ada891a9dedaeef1bed0a3750fe1c573.wasm.unityweb",
+  "streamingAssetsUrl": "StreamingAssets",
+  "companyName": "Park Seongsu Portfolio",
+  "productName": "Tool Battle Prototype",
+  "productVersion": "0.43.0"
+}
