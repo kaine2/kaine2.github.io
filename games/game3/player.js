@@ -3,6 +3,20 @@
   const embedded = window.parent !== window || new URLSearchParams(location.search).get('embed') === '1';
   document.body.classList.toggle('embedded', embedded);
   const canvas = document.getElementById('unity-canvas');
+  const player = document.getElementById('player');
+  const orientationHint = document.getElementById('orientation-hint');
+  // Keep Unity's viewport landscape even inside a portrait window or fullscreen iframe.
+  // Resize the canvas itself so rendering and pointer coordinates share the same bounds.
+  const fitCanvas = () => {
+    const width = Math.min(player.clientWidth, player.clientHeight * 16 / 9);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${width * 9 / 16}px`;
+    orientationHint.hidden = player.clientHeight <= player.clientWidth;
+  };
+  new ResizeObserver(fitCanvas).observe(player);
+  window.addEventListener('resize', fitCanvas, {passive:true});
+  window.visualViewport?.addEventListener('resize', fitCanvas, {passive:true});
+  fitCanvas();
   const loading = document.getElementById('loading');
   const message = document.getElementById('loading-message');
   const progress = document.getElementById('progress');

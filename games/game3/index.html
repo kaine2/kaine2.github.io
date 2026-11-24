@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="ko">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,follow"><meta name="theme-color" content="#10131b"><title>창작게임3 · 전투 프로토타입</title><link rel="stylesheet" href="player.css"><script src="player.js" defer></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,follow"><meta name="theme-color" content="#10131b"><title>창작게임3 · 전투 프로토타입</title><link rel="stylesheet" href="player.css?v=20261124-2"><script src="player.js?v=20261124-2" defer></script></head>
 <body>
 <header class="standalone-bar"><a href="../../play-preview.html#game">← 포트폴리오로 돌아가기</a><button type="button" id="fullscreen">전체 화면 ⛶</button></header>
 <main id="player"><canvas id="unity-canvas" width="1280" height="720" tabindex="0" aria-label="창작게임3 전투 화면. 마우스로 행동과 대상을 선택하세요."></canvas>
+<p id="orientation-hint" hidden>휴대폰을 가로로 돌리면<br>더 크게 플레이할 수 있습니다.</p>
 <div id="loading" role="status" aria-live="polite"><div class="loading-content"><p class="eyebrow">PLAYABLE PROTOTYPE</p><h1>창작게임3</h1><p id="loading-message">전투를 준비하고 있습니다.</p><progress id="progress" max="1" value="0" aria-label="게임 다운로드 진행률"></progress><p id="progress-label">0%</p><small id="loading-note">첫 실행에는 다운로드와 준비 시간이 필요합니다.</small><button id="retry" type="button" hidden>다시 불러오기</button><a id="fallback" href="../../play-preview.html#game" target="_top" hidden>포트폴리오로 돌아가기</a></div></div>
 </main>
 <noscript>플레이하려면 브라우저에서 JavaScript를 허용해주세요.</noscript>
