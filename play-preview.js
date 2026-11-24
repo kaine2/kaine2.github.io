@@ -25,6 +25,12 @@
     if (typeof window.gtag === 'function') window.gtag('event', name, {game_name:'game3',link_section:section});
   };
   if (shortcut) {
+    const updateShortcutVisibility = () => {
+      shortcut.classList.toggle('is-scroll-ready', window.scrollY >= 300);
+    };
+    window.addEventListener('scroll', updateShortcutVisibility, {passive:true});
+    window.addEventListener('pageshow', updateShortcutVisibility);
+    updateShortcutVisibility();
     shortcutClose.addEventListener('click', () => {
       shortcut.hidden = true;
       // Return keyboard focus to a stable navigation target after dismissing.

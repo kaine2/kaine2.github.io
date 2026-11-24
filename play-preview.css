@@ -4,7 +4,7 @@
 .preview-banner a{text-decoration:underline;text-underline-offset:4px;font-weight:700;white-space:nowrap}
 /* Keep the game invitation outside the reading column on wide desktop screens. */
 .game-shortcut{position:fixed;right:22px;bottom:22px;z-index:30;width:260px;border:1px solid #e4a080;border-radius:14px;background:#1c232a;color:#fff;box-shadow:0 8px 30px #0003;overflow:hidden}
-.game-shortcut[hidden],.game-shortcut.is-game-visible,body.game-expanded .game-shortcut{display:none}
+.game-shortcut:not(.is-scroll-ready),.game-shortcut[hidden],.game-shortcut.is-game-visible,body.game-expanded .game-shortcut{display:none}
 .game-shortcut-link{display:flex;align-items:center;gap:12px;padding:18px 34px 18px 16px;min-height:80px}
 .game-shortcut-link:hover{background:#2b343e}
 .game-shortcut-link:focus-visible{outline:3px solid #ffb591;outline-offset:-4px}
@@ -16,7 +16,7 @@
 .game-shortcut-close{position:absolute;top:3px;right:3px;z-index:1;width:30px;height:30px;display:grid;place-items:center;border:0;border-radius:50%;font:inherit;font-size:21px;line-height:1;color:#e6edf4;background:#1c232ae8;cursor:pointer}
 .game-shortcut-close:hover{background:#4a3a35;color:#fff}
 .game-shortcut-close:focus-visible{outline:2px solid #ffb591;outline-offset:-3px}
-@media(min-width:1640px){.game-shortcut{width:188px;right:max(24px,calc((100vw - 1160px)/2 - 220px));top:50%;bottom:auto;transform:translateY(-50%)}.game-shortcut-link{display:block;padding:0 0 18px}.game-shortcut-preview{display:block;position:relative}.game-shortcut-preview img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.game-shortcut-preview>span{position:absolute;left:10px;bottom:8px;font-size:10px;line-height:1.4;background:#161d26e8;border:1px solid #ffffff30;border-radius:4px;padding:3px 7px;color:#ffb591}.game-shortcut-icon{display:none}.game-shortcut-copy{display:block;padding:13px 16px 0}.game-shortcut-copy strong{font-size:15px}.game-shortcut-copy small{font-size:11px}}
+@media(min-width:1640px){.game-shortcut{width:188px;right:max(12px,calc((100vw - 1160px)/2 - 284px));top:50%;bottom:auto;transform:translateY(-50%)}.game-shortcut-link{display:block;padding:0 0 18px}.game-shortcut-preview{display:block;position:relative}.game-shortcut-preview img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.game-shortcut-preview>span{position:absolute;left:10px;bottom:8px;font-size:10px;line-height:1.4;background:#161d26e8;border:1px solid #ffffff30;border-radius:4px;padding:3px 7px;color:#ffb591}.game-shortcut-icon{display:none}.game-shortcut-copy{display:block;padding:13px 16px 0}.game-shortcut-copy strong{font-size:15px}.game-shortcut-copy small{font-size:11px}}
 @media(max-width:1639px){body{padding-bottom:105px}}
 @media(max-width:600px){.game-shortcut{width:calc(100% - 32px);max-width:350px;right:16px;bottom:max(14px,env(safe-area-inset-bottom));border-radius:12px}.game-shortcut-link{min-height:64px;padding:13px 35px 13px 14px;gap:10px}.game-shortcut-copy strong{font-size:13px;line-height:1.5}.game-shortcut-copy strong br{display:none}.game-shortcut-copy small{display:none}.game-shortcut-icon{width:30px;height:30px;font-size:11px}.game-shortcut-close{top:16px}.game-shortcut-copy strong>span{margin-left:5px}}
 @media print{.game-shortcut{display:none}body{padding-bottom:0}}
