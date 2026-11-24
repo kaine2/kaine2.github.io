@@ -13,8 +13,8 @@
 .hero[data-hero-carousel] .hero-grid{position:relative;min-height:340px;padding-bottom:44px}
 .hero[data-hero-carousel] .intro{color:#dde2e4;text-shadow:0 1px 5px #0008}
 .hero[data-hero-carousel] h1{text-shadow:0 2px 20px #0005}
-.hero[data-hero-carousel] .profile{background:rgba(16,23,28,.52);border:1px solid #ffffff25;border-radius:16px;padding:24px;backdrop-filter:blur(10px);justify-self:end;min-width:190px}
-.hero[data-hero-carousel] .profile img{width:108px;height:108px;margin-bottom:18px}
+.hero[data-hero-carousel] .profile{background:rgba(16,23,28,.52);border:1px solid #ffffff25;border-radius:16px;padding:24px;backdrop-filter:blur(10px);justify-self:end;width:190px;min-width:0;text-align:center}
+.hero[data-hero-carousel] .profile img{width:108px;height:108px;margin:0 auto 18px}
 .hero[data-hero-carousel] .hero-tags li{background:rgba(16,23,28,.5);border-color:#ffffff38;color:#e5e9eb}
 .hero[data-hero-carousel] .ghost{background:rgba(16,23,28,.48);border-color:#ffffff55}
 .hero-controls{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:19px;padding-bottom:22px;border-top:1px solid #ffffff29;min-height:100px}
