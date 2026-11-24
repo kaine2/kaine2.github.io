@@ -8,6 +8,8 @@
   const fullscreen = document.querySelector('[data-game-fullscreen]');
   const exit = document.querySelector('[data-game-exit]');
   const collapse = document.querySelector('[data-game-collapse]');
+  const shortcut = document.querySelector('[data-game-shortcut]');
+  const shortcutClose = document.querySelector('[data-game-shortcut-close]');
   let frame = null;
   const focusGame = () => {
     if (frame) { frame.focus(); frame.contentWindow.postMessage({source:'game3-host',type:'focus'},location.origin); }
@@ -19,9 +21,23 @@
     fullscreen.textContent = '전체 화면 ⛶';
     focusGame();
   }
-  const track = (name) => {
-    if (typeof window.gtag === 'function') window.gtag('event', name, {game_name:'game3',link_section:'playable_prototype'});
+  const track = (name, section = 'playable_prototype') => {
+    if (typeof window.gtag === 'function') window.gtag('event', name, {game_name:'game3',link_section:section});
   };
+  if (shortcut) {
+    shortcutClose.addEventListener('click', () => {
+      shortcut.hidden = true;
+      // Return keyboard focus to a stable navigation target after dismissing.
+      document.querySelector('.brand')?.focus({preventScroll:true});
+    });
+    shortcut.querySelector('[data-game-shortcut-link]').addEventListener('click', () => track('portfolio_game_shortcut_click', 'floating_shortcut'));
+    // The invitation should not cover the game or compete with its own Play button.
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        shortcut.classList.toggle('is-game-visible', entry.isIntersecting);
+      }).observe(document.querySelector('[data-game-player]'));
+    }
+  }
   launch.addEventListener('click', () => {
     if (frame) return;
     frame = document.createElement('iframe');
